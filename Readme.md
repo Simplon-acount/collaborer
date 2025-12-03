@@ -1,7 +1,7 @@
 # 🏆 Mini Compétition Python : Super-Calculateur Collaboratif
 
 Bienvenue dans ce projet collaboratif !  
-L'objectif est de travailler **en équipe** de 5 apprenants, gérer **Git et GitHub**, et produire un **super-calculateur Python fonctionnel**.  
+L'objectif est de travailler **en équipe** de 5 apprenants, gérer **Git et GitHub**, et produire un **super-calculateur Python fonctionnel**, tout en respectant les bonnes pratiques de collaboration Agile.
 
 ---
 
@@ -15,11 +15,13 @@ competition_repo/
 ├── group1/
 │   ├── simple_calculator.py
 │   ├── stat_calculator.py
-│   └── main.py
+│   ├── main.py
+│   └── feedback.md    # Trello link in markdown (or screenshots) + Planning Poker "https://planningpokeronline.com/" + retrospective results
 ├── group2/
 │   ├── simple_calculator.py
 │   ├── stat_calculator.py
-│   └── main.py
+│   ├── main.py
+│   └── feedback.md
 ├── group3/
 └── group4/
 ```
@@ -31,7 +33,7 @@ competition_repo/
   3. `main.py` → super-calculateur combinant toutes les fonctions  
 
 - **Tous les 4 membres contribuent à chaque fichier**,  
-- **l’orchestrateur gère uniquement les pull requests, merges et tests et n’écrit pas de code.**
+- **L’orchestrateur gère uniquement les pull requests, merges et tests et n’écrit pas de code.**
 
 ---
 
@@ -47,6 +49,28 @@ competition_repo/
 
 ---
 
+## **Planification Agile et Sprint**
+
+Avant de commencer à coder :
+
+1. **Sprint planning**
+   - Créer un **sprint backlog** avec toutes les tâches du projet (réparties dans `tasks.md`).  
+   - Estimer les tâches avec **Planning Poker** sur [https://planningpokeronline.com/](https://planningpokeronline.com/).  
+   - Affecter chaque tâche à un membre de l’équipe et enregistrer les affectations dans Trello.
+
+2. **Trello / Kanban**
+   - Chaque groupe doit créer un tableau Trello avec colonnes : `To Do`, `In Progress`, `Done`.  
+   - Chaque membre met à jour ses tâches dans Trello pour suivre l’avancement.
+
+3. **Rétrospective**
+   - À la fin du sprint, organiser une **réunion rétrospective** pour :
+     - Discuter de ce qui a bien fonctionné  
+     - Identifier les points d’amélioration  
+     - Valider les artefacts (Trello, backlog, code, tests)  
+   - Documenter le résultat de la rétrospective dans `feedback.md`.
+
+---
+
 ## **Règles de Git et collaboration**
 
 ### **Création de branche pour le groupe**
@@ -58,9 +82,7 @@ git checkout -b groupX-main
 - Modifier le fichier assigné (`simple_calculator.py`, `stat_calculator.py`, `main.py`)  
 - Ajouter vos modifications :
 ```bash
-git add simple_calculator.py
-git add stat_calculator.py
-git add main.py
+git add simple_calculator.py stat_calculator.py main.py
 ```
 - Commit avec message clair :
 ```bash
@@ -107,6 +129,7 @@ git push origin main
 - Tester vos fonctions localement avant de faire un push  
 - Communiquer activement pour gérer les merges et conflits  
 - Respecter l’ordre de collaboration pour `simple_calculator.py` et `stat_calculator.py`  
+- Mettre à jour régulièrement Trello et le backlog
 
 ---
 
@@ -114,7 +137,12 @@ git push origin main
 
 - **Résultat final** : super-calculateur fonctionnel avec toutes les fonctions intégrées  
 - **Collaboration** : tous les membres doivent contribuer aux fichiers (au moins 3 commits par membre)  
-- **Gagnant** : le premier groupe à intégrer et tester correctement tous les fichiers avec code fonctionnel et PRs complétées  
+- **Artefacts** : backlog, Trello à jour, tests unitaires réalisés  
+- **Rétrospective** : réunion effectuée et documentée dans `feedback.md`  
+- **Planning Poker** : capture de l’estimation des tâches documentée
+
+**Gagnant** : le premier groupe qui termine **toutes les tâches**, avec **code fonctionnel**, **PRs validées**, **Trello à jour**, **artefacts complets**, **planning poker documenté**, et **rétrospective réalisée**.  
+> Si un groupe termine en premier mais ne respecte pas ces critères, il ne sera pas considéré comme gagnant.
 
 ---
 
