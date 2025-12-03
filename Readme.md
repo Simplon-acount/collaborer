@@ -64,9 +64,9 @@ Avant de commencer à coder :
 
 3. **Rétrospective**
    - À la fin du sprint, organiser une **réunion rétrospective** pour :
-     - Discuter de ce qui a bien fonctionné  
-     - Identifier les points d’amélioration  
-     - Valider les artefacts (Trello, backlog, code, tests)  
+    - Discuter de ce qui a bien fonctionné
+    - Identifier les points d'amélioration
+    - Proposer des améliorations pour la collaboration future 
    - Documenter le résultat de la rétrospective dans `feedback.md`.
 
 ---
