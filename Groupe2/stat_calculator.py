@@ -1,3 +1,4 @@
+
 import pandas as pd
 
 def mean(df, column):
@@ -7,7 +8,9 @@ def median(df, column):
     return df[column].median()
 
 def mode(df, column):
-    return df[column].mode().tolist()  # retourne une liste (plusieurs modes possibles)
+   mode1 = df[column].mode()[0]
+   mode2 = df[column].mode()[1]
+   return mode1,mode2
 
 def maximum(df, column):
     return df[column].max()
