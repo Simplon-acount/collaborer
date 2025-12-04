@@ -8,23 +8,33 @@ def subtract(a, b):
     return a - b
 
 
-# 3. Multiplication (utilise add)
+# 3. Multiplication (utilise la fonction add)
 def multiply(a, b):
     result = 0
-    for _ in range(abs(b)):  
-        result = add(result, a)
+
+    # Gestion des nombres négatifs
+    negatif = False
     if b < 0:
+        b = -b
+        negatif = True
+
+    for _ in range(int(b)):
+        result = add(result, a)
+
+    if negatif:
         result = -result
+
     return result
+
 
 # 4. Division (avec gestion division par zéro)
 def divide(a, b):
     if b == 0:
-
         return "Erreur : division par zéro"
     return a / b
 
-# 5. Puissance (a élevé à la puissance b)
+
+# 5. Puissance (a élevé à la puissance b) — utilise multiply
 def power(a, b):
     if b == 0:
         return 1
@@ -41,6 +51,7 @@ def power(a, b):
     for _ in range(b):
         result = multiply(result, a)
     return result
+
 
 # Interface utilisateur simple
 while True:
@@ -73,6 +84,4 @@ while True:
         print("Result:", power(a, b))
     else:
         print("Invalid choice, try again!")
-
-        return "Erreur : division par zéro impossible."
-    return a / b
+        
