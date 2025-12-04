@@ -5,7 +5,6 @@ def add(a,b):
 def subtract(a, b):
     return a-b
 def multiply(a, b):
-    """Multiply using repeated addition"""
     result = 0
     negative = False
     if b < 0:
@@ -18,8 +17,6 @@ def multiply(a, b):
 
     if negative:
         result = -result
-
-
 
 
 def divide(a,b):
@@ -39,48 +36,26 @@ def power(a, b):
         result = 1 / result
     return result
 
-# Boucle interactive
-while True:
-    print("\n=== Simple Calculator ===")
-    print("Choisissez une opération :")
-    print("1. Addition (+)")
-    print("2. Soustraction (-)")
-    print("3. Multiplication (*)")
-    print("4. Division (/)")
-    print("5. Puissance (^)")
-    print("q. Quitter")
 
-    choice = input("Votre choix : ")
+def simple_calculator_interface():
+    while True:
+        print("\nOpérations disponibles: add, subtract, multiply, divide, power, quit")
+        op = input("Choisissez une opération: ").strip().lower()
+        if op == "quit":
+            break
+        a = int(input("Entrez le premier nombre: "))
+        b = int(input("Entrez le deuxième nombre: "))
 
-    if choice.lower() == 'q':
-        print("Au revoir !")
-        break
-
-    if choice not in ['1', '2', '3', '4', '5']:
-        print("Choix invalide, réessayez.")
-        continue
-
-    try:
-        a = float(input("Entrez le premier nombre : "))
-        b = float(input("Entrez le deuxième nombre : "))
-    except ValueError:
-        print("Veuillez entrer des nombres valides.")
-        continue
-
-    if choice == '1':
-        print(f"Résultat : {add(a, b)}")
-    elif choice == '2':
-        print(f"Résultat : {subtract(a, b)}")
-    elif choice == '3':
-        print(f"Résultat : {multiply(a, b)}")
-    elif choice == '4':
-        result = divide(a, b)
-        print(f"Résultat : {result}")
-    elif choice == '5':
-        # Pour power, on convertit b en int (exposant entier)
-        try:
-            b_int = int(b)
-            print(f"Résultat : {power(a, b_int)}")
-        except ValueError:
-            print("L'exposant doit être un entier.")
+        if op == "add":
+            print("Résultat:", add(a, b))
+        elif op == "subtract":
+            print("Résultat:", subtract(a, b))
+        elif op == "multiply":
+            print("Résultat:", multiply(a, b))
+        elif op == "divide":
+            print("Résultat:", divide(a, b))
+        elif op == "power":
+            print("Résultat:", power(a, b))
+        else:
+            print("Opération invalide")
 
