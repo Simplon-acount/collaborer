@@ -1,34 +1,61 @@
-def add(a, b):
-    return a + b
+# 12. Importer toutes les fonctions
+from simple_calculator import add, mean, moyen, multiply, divide
+from stat_calculator import normalise, mod, averageMed, moreDispersed, maxMin, dfStats
+import pandas as pd
 
-def multiply(a, b):
-    """Multiplie a et b en utilisant uniquement la fonction add."""
-    if a == 0 or b == 0:
-        return 0
+def super_calculateur():
+    print("🌟 Bienvenue dans le Super-Calculateur ! 🌟\n")
+
+    # --- Partie 1 : Calculs simples ---
+    print("🔢 Calculs simples :")
+    a = float(input("Entrez le premier nombre (a) : "))
+    b = float(input("Entrez le second nombre (b) : "))
     
-    # Gérer le signe
-    negative = (a < 0) ^ (b < 0)  # XOR : vrai si un seul est négatif
-    a, b = abs(a), abs(b)
+    print(f"add({a}, {b}) = {add(a, b)}")
+    print(f"mean({a}, {b}) = {mean(a, b)}")
+    print(f"moyen({a}, {b}) = {moyen(a, b)}")
+    print(f"multiply({a}, {b}) = {multiply(int(a), int(b))} (entiers uniquement)")
+    print(f"divide({a}, {b}) = {divide(a, b)}")
+    print()
 
-    result = 0
-    for _ in range(b):
-        result = add(result, a)
+    # --- Partie 2 : Statistiques ---
+    print("📊 Statistiques sur deux DataFrames :")
     
-    return -result if negative else result
+    # Créer deux petits DataFrames de démonstration (ou charger des fichiers CSV)
+    data1 = {
+        "X": [1, 2, 3, 4, 5],
+        "Y": [10, 20, 30, 40, 50]
+    }
+    data2 = {
+        "X": [2, 4, 6, 8, 10],
+        "Y": [15, 25, 35, 45, 55]
+    }
+    df1 = pd.DataFrame(data1)
+    df2 = pd.DataFrame(data2)
 
-def divide(a, b):
-    """Divise a par b. Renvoie None (ou un message) si division par zéro."""
-    if b == 0:
-        print("Erreur : Division par zéro impossible.")
-        return None  # ou raise ValueError("Division par zéro")
-    return a / b
+    numbers = [10, 3, 7, 15, 2, 9]  # liste pour maxMin
 
+    # 11. Appel de dfStats
+    stats_result = dfStats(df1, df2, numbers)
 
+    print("\n📈 Résultats statistiques :")
+    print("- Modes :")
+    print("  df1 :", stats_result["mode_df1"].to_dict())
+    print("  df2 :", stats_result["mode_df2"].to_dict())
 
+    print("\n- Moyennes :")
+    print("  df1 :", stats_result["mean_df1"].to_dict())
+    print("  df2 :", stats_result["mean_df2"].to_dict())
 
-print(multiply(3, 4))    # 12
-print(multiply(-2, 5))   # -10
-print(multiply(0, 100))  # 0
+    print("\n- Médianes :")
+    print("  df1 :", stats_result["median_df1"].to_dict())
+    print("  df2 :", stats_result["median_df2"].to_dict())
 
-print(divide(10, 2))     # 5.0
-print(divide(5, 0))      # Erreur : Division par zéro impossible. + None
+    print(f"\n- Le DataFrame le plus dispersé (après normalisation) : {stats_result['more_dispersed']}")
+
+    print(f"\n- Min/Max de la liste {numbers} : min = {stats_result['min_value']}, max = {stats_result['max_value']}")
+
+    print("\n✅ Tous les calculs terminés !")
+
+if __name__ == "__main__":
+    super_calculateur()
