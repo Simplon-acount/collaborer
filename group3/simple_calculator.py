@@ -73,6 +73,6 @@ while True:
         print("Result:", power(a, b))
     else:
         print("Invalid choice, try again!")
-=======
+
         return "Erreur : division par zéro impossible."
     return a / b
