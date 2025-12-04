@@ -24,7 +24,7 @@ Chaque groupe travaille sur **3 fichiers principaux** :
 ### **stat_calculator.py**
 - Tâches individuelles :
   6. Créer une fonction `normalise(df)` → retourne le dataframe normalisé
-  7. Créer une fonction `mod(df1, df2)` → retourne le mode de `df1` et le modulo de `df2`  
+  7. Créer une fonction `mod(df1, df2)` → retourne le mode de `df1` et le mode de `df2`  
   8. Créer une fonction `averageMed(df)` → retourne la moyenne et la médiane de `df`  
   9. Créer une fonction `moreDispersed(df1, df2)` → retourne quel DataFrame est le plus dispersé après normalisation (utiliser `normalise(df)`)  
   10. Créer une fonction `maxMin(numbers)` → retourne le maximum et le minimum d’une liste  
