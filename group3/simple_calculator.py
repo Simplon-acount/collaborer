@@ -7,16 +7,13 @@ def add(a, b):
 def subtract(a, b):
     return a - b
 
-# Fonction minimum
-def min_custom(a, b):
-    if a < b:
-        return a
-    else:
-        return b
 
-# Fonction maximum
-def max_custom(a, b):
-    if a > b:
-        return a
-    else:
-        return b
+# 3. Multiplication 
+def multiply(a, b):
+   return a*b
+
+# 4. Division (avec gestion division par zéro)
+def divide(a, b):
+    if b == 0:
+        return "Erreur : division par zéro"
+    return a / b
