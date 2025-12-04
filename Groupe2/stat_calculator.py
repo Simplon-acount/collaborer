@@ -8,3 +8,9 @@ def median(df, column):
 
 def mode(df, column):
     return df[column].mode().tolist()  # retourne une liste (plusieurs modes possibles)
+
+def maximum(df, column):
+    return df[column].max()
+
+def minimum(df, column):
+    return df[column].min()
