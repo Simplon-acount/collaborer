@@ -8,19 +8,13 @@ def subtract(a, b):
     return a - b
 
 
-# 3. Multiplication (utilise add)
+# 3. Multiplication 
 def multiply(a, b):
-    result = 0
-    for _ in range(abs(b)):  
-        result = add(result, a)
-    if b < 0:
-        result = -result
-    return result
+   return a*b
 
 # 4. Division (avec gestion division par zéro)
 def divide(a, b):
     if b == 0:
-
         return "Erreur : division par zéro"
     return a / b
 
@@ -73,6 +67,3 @@ while True:
         print("Result:", power(a, b))
     else:
         print("Invalid choice, try again!")
-=======
-        return "Erreur : division par zéro impossible."
-    return a / b
